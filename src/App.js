@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import ReactFlowComponent from './ReactFlowComponent';
 
 function App() {
+  const [dataSelect, setDataSelect] = useState();
+  const [idSelect, setIdSelect] = useState(-1);
+  const [saveClicked, setSaveClicked] = useState(false)
+
+  const handleClick = () => {
+    //get the id of selected node
+    setIdSelect(document.getElementsByClassName("textarea-data")[0]?.id);
+    //get the data of selected node
+    setDataSelect(document.getElementsByClassName("textarea-data")[0]?.defaultValue);
+    setSaveClicked(true)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <header className='header'><button className="savechanges" onClick={handleClick} style={{}}><b>Save Changes</b></button></header>
+      <ReactFlowComponent dataSelect={dataSelect} idSelect={idSelect} saveClicked={saveClicked} resetSaveClicked={() => setSaveClicked(false)}/>
+    </>
   );
 }
 

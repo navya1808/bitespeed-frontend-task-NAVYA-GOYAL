@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+
+*{
+  padding: 0px;
+  margin : 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color: #f0f0f0;
+  height: 70px;
+  display: grid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button {
+  float: right;
+  margin: auto;
+  margin-right: 120px;
+  border: 1px solid #0041d0;
+  border-radius: 10px;
+  padding: 10px;
+  width: 10%;
+  font-size: 18px;
+  color: blue;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: blue;
+}
+
+
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
+}
+
+.dndflow aside {
+  border-left: 3px solid #f0f0f0;
+  width: 100%;
+}
+
+.dndflow .dndnode {
+  height: 80px;
+  padding: 4px;
+  border: 1px solid blue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  color: blue;
+  margin: 15px 10px;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  width: 100%
+}
+
+.dndflow .selectall {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
+  }
+
+  .dndflow aside {
+    width: 20%;
+    max-width: 250px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.custom-node {
+  height:60px;
+  width: 200px;
+  border: 2px solid #f0f0f0; 
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.send-message{
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  background: aquamarine;
+  padding: 0px 10px;
+}
+
+.data{
+  height: 40px;
+  padding-left: 10px;
+  background: white
+}
+
+.messagePanel{
   display: flex;
   flex-direction: column;
+  align-items: center; 
+}
+
+.message{
+  height: 50px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* justify-content: center; */
+  border-bottom: 3px solid #f0f0f0;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.box{
+  border-bottom: 3px solid #f0f0f0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textareaBox{
+  margin: 10px 10px;
+}
+
+.text{
+color: grey;
+margin: 15px 10px;
+font-weight: bold;
+font-size: large;
+}
+
+textarea{
+  resize: vertical;
+  width: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  border: 2px solid #f0f0f0;
+}
+
+textarea:focus {
+  border: 2px solid rgb(134, 150, 144);
 }
